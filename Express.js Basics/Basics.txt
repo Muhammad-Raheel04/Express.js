@@ -1,0 +1,7 @@
+# Express.js
+Express.js is a fast, minimal, and flexible Node.js web
+framework used to build web applications and REST APIs easily.
+
+run following command to install Express
+
+npm install express

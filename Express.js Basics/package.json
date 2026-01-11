@@ -1,0 +1,10 @@
+{
+  "author":"Muhammad Raheel",
+  "version":"1.0.0",
+  "description":"Basic conceps of Express.js",
+  "main":"baisc.js",
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemon": "^3.1.11"
+  }
+}
