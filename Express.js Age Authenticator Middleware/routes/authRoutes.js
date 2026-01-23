@@ -14,7 +14,7 @@ router.post('/check-age',ageAuthenticator,(req,res)=>{
 router.get('/blocked',(req,res)=>{
     res.sendFile(path.join(__dirname,'..','public','pages','denied.html'));
 })
-router.get('/services',ageAuthenticator,(req,res)=>{
+router.get('/services',(req,res)=>{
     res.sendFile(path.join(__dirname,'..','public','pages','services.html'));
 })
 module.exports =router;
