@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const path= require('path')
@@ -8,6 +9,7 @@ app.use(express.static(path.join(__dirname,'public')));
 const authRoutes=require('./routes/authRoutes');
 
 app.use('/',authRoutes);
-app.listen(3200,()=>{
+const PORT=process.env.PORT || 3200;
+app.listen(PORT,()=>{
     console.log("Server live on http://localhost:3200");
 })
