@@ -5,12 +5,22 @@ const path = require('path');
 const { ageAuthenticator, sessionMiddleware } = require('../middleware/authMiddleware');
 
 router.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'public', 'pages', 'index.html'));
+    let message = req.session.message || null;
+    req.session.message = null; // ensures message is displayed for only once
+
+    req.session.save(() => {
+        res.render('index', { message });
+    })
 })
 
 router.post('/check-age', ageAuthenticator, (req, res) => {
     req.session.Verified = true;
-    res.redirect('/services');
+    req.session.message = null;
+
+    req.session.save(() => {
+        res.redirect('/services');
+    })
+
 })
 router.get('/blocked', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'pages', 'denied.html'));
