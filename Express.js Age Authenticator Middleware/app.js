@@ -8,7 +8,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname,'public')));
 
 app.use(session({
-    session:process.env.SESSION_SECRET,
+    secret:String(process.env.SESSION_SECRET),
     resave:false,
     saveUninitialized:false
 }))
