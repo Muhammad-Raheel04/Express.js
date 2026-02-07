@@ -6,3 +6,4 @@ function sessionChecker(req,res,next){
         res.redirect('/');
     }
 }
+module.exports=sessionChecker;
