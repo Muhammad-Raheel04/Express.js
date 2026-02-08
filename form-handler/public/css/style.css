@@ -11,20 +11,30 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
 .container {
     background: #ffffff;
     padding: 30px 35px;
     width: 100%;
-    max-width: 420px;
-    border-radius: 10px;
+    height: auto;
+    max-height: 600px;
+    max-width: 80vw;
+    border-radius: 25px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+
 }
 
 h2 {
-    margin-bottom: 20px;
+    font-size: 4.2rem;
+    margin-bottom: 2.2rem;
     color: #333;
 }
 
@@ -56,10 +66,10 @@ button {
     border: none;
     border-radius: 6px;
     color: white;
-    font-size: 15px;
+    font-size: 2.2rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 button:hover {
@@ -85,3 +95,55 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+@media (max-width: 480px) {
+    body {
+        align-items: flex-start;
+        padding-top: 40px;
+    }
+
+    .container {
+        padding: 25px 20px;
+        border-radius: 8px;
+    }
+
+    textarea {
+        height: 150px;
+    }
+
+    button {
+        padding: 14px;
+        font-size: 16px;
+    }
+}
+
+input,
+textarea {
+    padding: 14px;
+    font-size: 2.2rem;
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 420px;
+        padding: 35px 30px;
+        border-radius: 16px;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    input,
+    textarea {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+
